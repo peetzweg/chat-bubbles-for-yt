@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react'
 
-const useMessages = (initialValue = []) => {
+const useMessages = (initialValue: Array<string> = []) => {
   const [messages, setMessages] = useState(initialValue)
 
   const addMessage = useCallback(
-    msg => {
+    (msg: string) => {
       setMessages(messages => [...messages, msg])
       setTimeout(() => {
         setMessages(current => {

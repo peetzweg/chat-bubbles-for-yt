@@ -32,7 +32,7 @@ function App() {
       <Chat>
         <AnimatePresence>
           {messages.map(m => (
-            <Bubble id={m.id} dy={dy}>
+            <Bubble key={m.id} id={m.id} dy={dy}>
               {m.text}
             </Bubble>
           ))}

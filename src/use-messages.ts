@@ -1,10 +1,16 @@
 import { useState, useCallback } from 'react'
 
-const useMessages = (initialValue: Array<string> = []) => {
+export interface Message {
+  id: number
+  text: string
+  height: number
+}
+
+const useMessages = (initialValue: Array<Message> = []) => {
   const [messages, setMessages] = useState(initialValue)
 
   const addMessage = useCallback(
-    (msg: string) => {
+    (msg: Message) => {
       setMessages(messages => [...messages, msg])
       setTimeout(() => {
         setMessages(current => {
@@ -17,7 +23,7 @@ const useMessages = (initialValue: Array<string> = []) => {
     [setMessages]
   )
 
-  return [messages, addMessage]
+  return [messages, addMessage] as const
 }
 
 export default useMessages

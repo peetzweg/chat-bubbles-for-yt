@@ -11,15 +11,19 @@ const transition = {
   }
 }
 
-const Bubble = ({ id, children, sender, dy }) => {
+interface BubbleProps {
+  id: number
+  dy: number
+  children: React.ReactNode
+}
+
+const Bubble = ({ id, children, dy }: BubbleProps) => {
   const [isPresent, safeToRemove] = usePresence()
 
   const animations = {
     layout: true,
     initial: 'out',
-    style: {
-      position: 'static'
-    },
+
     animate: 'in',
     variants: {
       in: { opacity: 1, translateY: 0 },
@@ -31,9 +35,11 @@ const Bubble = ({ id, children, sender, dy }) => {
   }
 
   return (
-    <motion.div key={id} className="bubble" {...animations}>
-      <div className="bubble-content">{children}</div>
-    </motion.div>
+    <div style={{ position: 'static' }}>
+      <motion.div key={id} className="bubble" {...animations}>
+        <div className="bubble-content">{children}</div>
+      </motion.div>
+    </div>
   )
 }
 

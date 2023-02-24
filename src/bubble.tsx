@@ -1,5 +1,5 @@
-import React from 'react'
 import { motion, usePresence } from 'framer-motion'
+import React from 'react'
 import './bubble.css'
 
 const transition = {
@@ -23,7 +23,6 @@ const Bubble = ({ id, children, dy }: BubbleProps) => {
   const animations = {
     layout: true,
     initial: 'out',
-
     animate: 'in',
     variants: {
       in: { opacity: 1, translateY: 0 },
@@ -35,11 +34,11 @@ const Bubble = ({ id, children, dy }: BubbleProps) => {
   }
 
   return (
-    <div style={{ position: 'static' }}>
-      <motion.div key={id} className="bubble" {...animations}>
+    <motion.div key={id} className="bubble" {...animations}>
+      <div style={{ position: 'static' }}>
         <div className="bubble-content">{children}</div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   )
 }
 

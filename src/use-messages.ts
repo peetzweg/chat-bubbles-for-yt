@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 export interface Message {
   id: number
@@ -18,7 +18,7 @@ const useMessages = (initialValue: Array<Message> = []) => {
           n.shift()
           return n
         })
-      }, 15000)
+      }, 3000)
     },
     [setMessages]
   )

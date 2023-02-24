@@ -1,5 +1,5 @@
-import React from 'react'
 import { motion, usePresence } from 'framer-motion'
+import React from 'react'
 import './bubble.css'
 
 const transition = {

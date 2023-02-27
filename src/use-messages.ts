@@ -18,7 +18,7 @@ const useMessages = (initialValue: Array<Message> = []) => {
           n.shift()
           return n
         })
-      }, 3000)
+      }, 15000)
     },
     [setMessages]
   )
